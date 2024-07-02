@@ -10,6 +10,7 @@ const state = {
         new Todo('Tesis'),
         new Todo('lectura'),
         new Todo('Memoria'),
+        new Todo('Ejercicio'),
     ],
     filter : Filters.All
 }
@@ -23,7 +24,7 @@ const loadStore = () => {
     throw new Error ('Not implemented');
 }
 
-const getTodo = (newFilter = Filters.All) => {
+const getTodo = (filter = Filters.All) => {
     switch (filter) {
         case Filters.All:
             return [...state.todos];
@@ -49,8 +50,13 @@ const addTodo = ( description ) => {
     }
 }
 
-const toggleTodo = (todoId) => {
-    throw new Error ('Not implemented');
+const toggleTodo = ( todoId) => {
+    state.todos = state.todos.map( todo => {
+        if (todo.id === todoId) {
+            todo.done = !todo.done;
+    }
+    return todo;
+});
 }
 
 const deleTodo = (todoId) => {
