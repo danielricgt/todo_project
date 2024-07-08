@@ -15,7 +15,7 @@ export const App = (elementId) => {
 
     const displayTodos = () =>{
         const todos = todoStore.getTodo( todoStore.getCurentFilter());
-        renderTodos(elementIDs.TodoList, todos)
+        renderTodos(elementIDs.TodoList, todos);
     } 
     // cuando la funcion app se llama
     (()=> {
