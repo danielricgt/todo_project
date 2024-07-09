@@ -3,7 +3,7 @@ import html from '../todos/app.html?raw';
 import { renderTodos } from './use-cases';
 
 const elementIDs = {
-    TodoList: 'todo-list',
+    TodoList: '.todo-list',
 }
 
 /**
